@@ -7,9 +7,10 @@
               <router-link to="/" >Law</router-link>
             </div>
             <div>
-              <router-link to="/services" class="text-gray-100 hover:text-gray-200 px-4">Services</router-link>
-              <router-link to="/about" class="text-gray-100 hover:text-gray-200 px-4">About Us</router-link>
-              <router-link to="/contact" class="text-gray-100 hover:text-gray-200 px-4">Contact</router-link>
+              <router-link to="/" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/') }">Home</router-link>
+              <router-link to="/services" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/services') }">Services</router-link>
+              <router-link to="/about" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/about') }">About Us</router-link>
+              <router-link to="/contact" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/contact') }">Contact</router-link>
             </div>
           </div>
         </div>
@@ -29,7 +30,18 @@
   <script>
   
   export default {
+  data() {
+    return {
+      data: ''
+    };
+  },
+  methods: {
+    getActiveClass(route) {
+      console.log(this.$route.path === route);
+      return this.$route.path === route;
+    }
   }
+}
   </script>
   
   <style>

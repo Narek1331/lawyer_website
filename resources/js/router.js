@@ -12,6 +12,8 @@ import AdminProfileUsers from './components/Admin/Profile/Users.vue';
 import AdminProfileSettings from './components/Admin/Profile/Settings.vue';
 import AdminAddUser from './components/Admin/Profile/AddAdmin.vue';
 import AdminOurServices from './components/Admin/Profile/OurServices.vue';
+import AdminOurServicesEdit from './components/Admin/Profile/OurServicesEdit.vue';
+import AdminUserEdit from './components/Admin/Profile/UserEdit.vue';
 
 
 const routes = [
@@ -51,6 +53,16 @@ const routes = [
             path: '/admin/profile/services',
             name: AdminOurServices,
             component: AdminOurServices
+          },
+          {
+            path: '/admin/profile/services/:id(\\d+)',
+            name: AdminOurServicesEdit,
+            component: AdminOurServicesEdit,
+          },
+          {
+            path: '/admin/profile/users/:id(\\d+)',
+            name: AdminUserEdit,
+            component: AdminUserEdit,
           },
         ]
       },
