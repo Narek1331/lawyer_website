@@ -106,7 +106,7 @@ class PostController extends Controller
             }
         // Update the post
         $updatedPost = $this->postService->updatePost($data, $request->validated());
-
+            
         // Return JSON response using PostResource
         return response()->json([
             'status' => true,

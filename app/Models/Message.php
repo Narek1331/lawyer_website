@@ -32,4 +32,12 @@ class Message extends Model
      * @var string
      */
     protected $table = 'messages';
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function answer()
+    {
+        return $this->hasOne(AnswerMessage::class);
+    }
 }

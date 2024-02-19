@@ -35,7 +35,7 @@ class MessageRepository
      */
     public function find($id)
     {
-        return Message::find($id);
+        return Message::with('answer')->find($id);
     }
 
     /**
@@ -48,6 +48,26 @@ class MessageRepository
     public function update(Message $message, array $data)
     {
         $message->update($data);
+        return $message;
+    }
+    
+    /**
+     * Answer the message.
+     *
+     * @param int $id
+     * @param string $message
+     * @return Message
+     */
+    public function answerMessage(int $id, string $msg)
+    {
+        $message = $this->find($id);
+
+        if(!$message->answer){
+            $message->answer()->create([
+                'message' => $msg
+            ]);
+        }
+
         return $message;
     }
 

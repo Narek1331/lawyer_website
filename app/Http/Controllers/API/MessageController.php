@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\CreateMessageRequest;
 use App\Http\Requests\API\UpdateMessageRequest;
+use App\Http\Requests\API\AnswerMessageRequest;
 use App\Http\Resources\MessageResource;
 use App\Services\MessageService;
 use Illuminate\Http\Request;
@@ -160,4 +161,42 @@ class MessageController extends Controller
             ], Response::HTTP_NOT_FOUND);
         }
     }
+
+    /**
+     * Answer a message.
+     *
+     * @param int $id The ID of the message to answer.
+     * @param \App\Http\Requests\AnswerMessageRequest $request The request containing the answer message.
+     * @return \Illuminate\Http\JsonResponse A JSON response indicating the result of the operation.
+     */
+    public function answer($id, AnswerMessageRequest $request)
+    {
+        try {
+            // Retrieve a message by ID using the MessageService
+            $message = $this->messageService->getMessageById($id);
+            
+            // Check if the message exists
+            if (!$message) {
+                // If the message does not exist, throw a ModelNotFoundException
+                throw new ModelNotFoundException();
+            }
+            // Answer the message using the message service
+            $message = $this->messageService->answerMessage($id, $request->message);
+            
+            // Return a JSON response indicating success
+            return response()->json([
+                'status' => true,
+                'message' => 'Message answer stored successfully',
+                'data' => new MessageResource($message)
+            ], 200);
+
+        } catch (ModelNotFoundException $exception) {
+            // If message not found, return JSON exception with 404 status code
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Message not found',
+            ], Response::HTTP_NOT_FOUND);
+        }
+    }
+
 }

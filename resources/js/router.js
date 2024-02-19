@@ -13,7 +13,9 @@ import AdminProfileSettings from './components/Admin/Profile/Settings.vue';
 import AdminAddUser from './components/Admin/Profile/AddAdmin.vue';
 import AdminOurServices from './components/Admin/Profile/OurServices.vue';
 import AdminOurServicesEdit from './components/Admin/Profile/OurServicesEdit.vue';
+import AdminOurServicesCreate from './components/Admin/Profile/OurServicesAdd.vue';
 import AdminUserEdit from './components/Admin/Profile/UserEdit.vue';
+import { authMiddleware } from './middlewares/auth';
 
 
 const routes = [
@@ -23,7 +25,9 @@ const routes = [
     children: [
       {
         path: '/admin',
-        component: AdminLogin
+        component: AdminLogin,
+        beforeEnter: authMiddleware 
+
       },
       {
         path: '/admin/profile',
@@ -60,11 +64,17 @@ const routes = [
             component: AdminOurServicesEdit,
           },
           {
+            path: '/admin/profile/services/create',
+            name: AdminOurServicesCreate,
+            component: AdminOurServicesCreate,
+          },
+          {
             path: '/admin/profile/users/:id(\\d+)',
             name: AdminUserEdit,
             component: AdminUserEdit,
           },
-        ]
+        ],
+        beforeEnter: authMiddleware 
       },
     ]
   },

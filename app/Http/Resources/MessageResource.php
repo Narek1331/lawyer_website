@@ -20,6 +20,7 @@ class MessageResource extends JsonResource
             'email' => $this->email,
             'phone_number' => $this->phone_number,
             'message' => $this->message,
+            'answer' => $this->answer ?? null,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

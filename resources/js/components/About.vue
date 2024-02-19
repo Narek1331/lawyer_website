@@ -1,39 +1,30 @@
 <template>
-    <div class="about-bg bg-cover min-h-screen flex flex-col justify-center items-center text-white">
-      <h1 class="text-5xl font-bold mb-6">About Our Law Firm</h1>
-      <p class="text-lg">We are a team of experienced lawyers dedicated to providing high-quality legal services to our clients.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
-      <p class="text-lg">Our mission is to serve our clients with professionalism, integrity, and compassion.</p>
+    <div :style="{ 'background-image': 'url(' + imagePath + ')' }" class="about-bg bg-cover min-h-screen flex flex-col justify-center items-center text-white">
+      <h1 class="text-5xl font-bold mb-6">Մեր իրավաբանական ընկերության մասին</h1>
+      <p class="text-lg text-center">
+        Բարի գալուստ [Firm Name], որտեղ իրավական գերազանցությունը համապատասխանում է անսասան պարտավորություններին: Հիմնված լինելով ազնվության, փորձաքննության և հաճախորդների գոհունակության սկզբունքների վրա՝ մենք կանգնած ենք որպես վստահության փարոս իրավաբանական համայնքում: Բարձր որակավորում ունեցող փաստաբանների թիմով, որոնք պարծենում են տասնամյակների կոլեկտիվ փորձով, մենք առաջարկում ենք համապարփակ իրավաբանական ծառայություններ պրակտիկայի լայն շրջանակում:
+      </p>
+      <p class="text-lg text-center">
+        [Firm Name]-ում մեր առաքելությունը հստակ է՝ ապահովել բացառիկ իրավական ներկայացուցչություն՝ միաժամանակ առաջնահերթություն տալով մեր հաճախորդների կարիքներին և նպատակներին: Մենք հասկանում ենք, որ իրավական դաշտում նավարկելը կարող է վախեցնել, այդ իսկ պատճառով մենք ձգտում ենք առաջարկել անհատականացված լուծումներ՝ հարմարեցված յուրաքանչյուր հաճախորդի յուրահատուկ հանգամանքներին: Մեր նպատակն է հզորացնել մեր հաճախորդներին տեղեկացված որոշումներ կայացնելու և իրենց ցանկալի արդյունքներին վստահորեն հասնելու համար
+      </p>
+      
     </div>
   </template>
   
   <script>
   export default {
-    name: 'AboutUsPage'
+    name: 'AboutUsPage',
+    data() {
+      return {
+        imagePath: null
+      };
+    },
+     async mounted(){
+       this.imagePath = await this.getImagePath('image1.jpg');
+    }
   }
   </script>
   
   <style scoped>
-  .about-bg {
-    background-image: url('https://segev.ca/wp-content/uploads/2021/09/business-lawyer-1200x800-1.jpg');
-  }
   </style>
   

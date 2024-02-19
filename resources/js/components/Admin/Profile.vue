@@ -47,9 +47,9 @@ export default {
     },
     logout() {
       // Implement your logout logic here
-      console.log('Logged out');
     }
   }
+
 };
 </script>
 

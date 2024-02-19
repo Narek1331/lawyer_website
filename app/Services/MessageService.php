@@ -73,4 +73,18 @@ class MessageService
     {
         $this->messageRepository->delete($message);
     }
+
+    /**
+     * answer the message.
+     *
+     * @param int $id
+     * @param string $message
+     */
+    public function answerMessage(int $id,string $message){
+        
+        $this->messageRepository->answerMessage($id, $message);
+        
+        return $this->messageRepository->find($id);
+
+    }
 }

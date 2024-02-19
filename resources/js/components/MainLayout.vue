@@ -7,10 +7,10 @@
               <router-link to="/" >Law</router-link>
             </div>
             <div>
-              <router-link to="/" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/') }">Home</router-link>
-              <router-link to="/services" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/services') }">Services</router-link>
-              <router-link to="/about" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/about') }">About Us</router-link>
-              <router-link to="/contact" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/contact') }">Contact</router-link>
+              <router-link to="/" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/') }">Գլխավոր էջ</router-link>
+              <router-link to="/services" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/services') }">Մեր ծառայությունները</router-link>
+              <router-link to="/about" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/about') }">Մեր մասին</router-link>
+              <router-link to="/contact" class="text-gray-100 hover:text-gray-200 px-4" :class="{ 'text-xl	': getActiveClass('/contact') }">Կոնտակտային տվյալներ</router-link>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
   
       <footer class="bg-gray-800 text-white py-8 mt-auto">
         <div class="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Law Firm. All rights reserved.</p>
+          <p>&copy; {{ getFullYear() }} Իրավաբանական ընկերություն. Բոլոր իրավունքները պաշտպանված են.</p>
         </div>
       </footer>
     </div>
@@ -36,8 +36,11 @@
     };
   },
   methods: {
+    getFullYear(){
+      const now = new Date();
+      return now.getFullYear();
+    },  
     getActiveClass(route) {
-      console.log(this.$route.path === route);
       return this.$route.path === route;
     }
   }

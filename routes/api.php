@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\PostController;
+use App\Http\Controllers\API\FileController;
 
 
 
@@ -15,11 +16,13 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::get('/{id}', [MessageController::class, 'show'])->where('id', '[0-9]+');
         Route::put('/{id}', [MessageController::class, 'update'])->where('id', '[0-9]+');
         Route::delete('/{id}', [MessageController::class, 'destroy'])->where('id', '[0-9]+');
+        Route::post('/answer/{id}', [MessageController::class, 'answer'])->where('id', '[0-9]+');
+
     });
 
     Route::group(['prefix' => 'post'], function () {
-        Route::put('/{id}', [MessageController::class, 'update'])->where('id', '[0-9]+');
-        Route::delete('/{id}', [MessageController::class, 'destroy'])->where('id', '[0-9]+');
+        Route::put('/{id}', [PostController::class, 'update'])->where('id', '[0-9]+');
+        Route::delete('/{id}', [PostController::class, 'destroy'])->where('id', '[0-9]+');
         Route::post('/', [PostController::class, 'store']);
     });
 
@@ -41,4 +44,8 @@ Route::post('/message', [MessageController::class, 'store']);
 Route::group(['prefix' => 'post'], function () {
     Route::get('/', [PostController::class, 'index']);
     Route::get('/{id}', [PostController::class, 'show'])->where('id', '[0-9]+');
+});
+
+Route::group(['prefix' => 'file'], function () {
+    Route::get('/image/{imageName}', [FileController::class, 'getImagePath']);
 });

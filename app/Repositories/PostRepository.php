@@ -39,7 +39,9 @@ class PostRepository
     public function update(Post $post, $data)
     {
         // Update the attributes of the given post
-        $post->update($data);
+        $post->name = $data['name'];
+        $post->description = $data['description'];
+        $post->save();
     }
 
     /**

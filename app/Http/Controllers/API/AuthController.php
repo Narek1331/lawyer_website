@@ -70,12 +70,29 @@ class AuthController extends Controller
             $request->new_password
         );
 
+        $token = $this->authService->createPersonalAccessToken(auth()->user());
+
         // Check if password change was successful
         if (!$success) {
-            return response()->json(['error' => 'Current password is incorrect'], 422);
+            return response()->json(
+                [
+                    'error' => 'Current password is incorrect',
+                    "message" => "The new password field is required.",
+                    "errors" => [
+                        "incorrect" => [
+                            "Current password is incorrect."
+                        ]
+                    ]
+                ]
+                , 422);
         }
 
-        return response()->json(['message' => 'Password changed successfully'], 200);
+        return response()->json(
+            [
+                'message' => 'Password changed successfully',
+                'token' => $token
+            ]
+            , 200);
     }
 
      /**

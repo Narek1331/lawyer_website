@@ -10,9 +10,9 @@
   
           </button>
         </div>
-        <div>Admin Panel</div>
+        <div>Ադմինիստրատորի վահանակ</div>
         <div>
-          <button @click="logout" class="text-gray-300 hover:text-white">Logout</button>
+          <button @click="logout" class="text-gray-300 hover:text-white">Դուրս գալ</button>
         </div>
       </div>
   
@@ -22,16 +22,16 @@
           <!-- Sidebar content goes here -->
           <ul class="py-4">
             <li class="px-6 py-3 text-gray-400 hover:text-white hover:bg-gray-700" :class="{ 'text-white': isActiveRoute('/admin/profile/users') }">
-                <router-link to="/admin/profile/users">Users</router-link>
+                <router-link to="/admin/profile/users">Հաղորդագրություններ</router-link>
             </li>
             <li class="px-6 py-3 text-gray-400 hover:text-white hover:bg-gray-700" :class="{ 'text-white': isActiveRoute('/admin/profile/services') }">
-                <router-link to="/admin/profile/services">Our Services</router-link>
+                <router-link to="/admin/profile/services">Մեր ծառայությունները</router-link>
             </li>
             <li class="px-6 py-3 text-gray-400 hover:text-white hover:bg-gray-700" :class="{ 'text-white': isActiveRoute('/admin/profile/settings') }">
-                <router-link to="/admin/profile/settings">Settings</router-link>
+                <router-link to="/admin/profile/settings">Կարգավորումներ</router-link>
             </li>
             <li class="px-6 py-3 text-gray-400 hover:text-white hover:bg-gray-700" :class="{ 'text-white': isActiveRoute('/admin/profile/add/user') }">
-                <router-link to="/admin/profile/add/user">Add Admin User</router-link>
+                <router-link to="/admin/profile/add/user">Ավելացնել ադմինիստրատորի օգտվող</router-link>
             </li>
           </ul>
         </div>
@@ -55,11 +55,11 @@
         this.isSidebarOpen = !this.isSidebarOpen;
       },
       logout() {
-        // Implement your logout logic here
-        console.log('Logged out');
+        localStorage.removeItem('lawyer_web_token');
+        this.$router.push('/admin');
       },
       isActiveRoute(route){
-        return this.$route.path === route;
+        return this.$route.path.startsWith(route + '/') || this.$route.path === route;
       }
     }
   };
