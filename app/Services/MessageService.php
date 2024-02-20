@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Models\Message;
 use App\Repositories\MessageRepository;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AnswerMessage;
 
 class MessageService
 {
@@ -84,7 +86,11 @@ class MessageService
         
         $this->messageRepository->answerMessage($id, $message);
         
-        return $this->messageRepository->find($id);
+        $message = $this->messageRepository->find($id);
+        
+        Mail::to($message['email'])->send(new AnswerMessage($message['message'], $message['answer']['message'],$message['name']));
+
+        return $message;
 
     }
 }
