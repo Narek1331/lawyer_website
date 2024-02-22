@@ -28,6 +28,8 @@
             </span>
             <span>Մուտք գործել</span>
           </button>
+          <router-link to="/" class="text-blue-500 hover:underline mt-4">Գլխավոր էջ</router-link>
+
         </div>
 
         <div v-if="message" class="mt-4">
