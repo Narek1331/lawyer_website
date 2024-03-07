@@ -34,7 +34,7 @@
 
     <footer class="bg-gray-800 text-white py-8 mt-auto">
       <div class="container mx-auto px-4 text-center">
-        <p>&copy; {{ getFullYear() }} Փորձ և Հմտություն Իրավաբանական ընկերություն. Բոլոր իրավունքները պաշտպանված են.</p>
+        <p>&copy; {{ getFullYear() }} Իրավաբանական ընկերություն. Բոլոր իրավունքները պաշտպանված են.</p>
       </div>
     </footer>
   </div>

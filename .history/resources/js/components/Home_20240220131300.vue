@@ -1,17 +1,17 @@
 <template>
   <div class="bg-gray-100 min-h-screen">
-
+   
   <div :style="{ 'background-image': 'url(' + imagePath + ')' }" class="home-bg bg-cover min-h-screen flex flex-col justify-center items-center text-white">
-    <h1 class="text-4xl font-bold mb-6 text-center">Բարի գալուստ Փորձ և Հմտություն իրավաբանական ընկերություն</h1>
+    <h1 class="text-4xl font-bold mb-6 text-center">Բարի գալուստ Մեր իրավաբանական ընկերություն</h1>
     <p class="text-lg text-center">
-      Գերազանցության խորը հավատարմությամբ և հարուստ փորձով մենք կանգնած ենք որպես վստահության և հուսալիության փարոս իրավական ոլորտում: Մեր ընկերությունը բաղկացած է փորձառու փաստաբանների թիմից, որոնցից յուրաքանչյուրը հագեցած է անզուգական հմտություններով և արդարադատության կիրքով:
+      Բարի գալուստ [Firm Name], որտեղ իրավական փորձաքննությունը հանդիպում է անսասան նվիրվածության: Գերազանցության խորը հավատարմությամբ և հարուստ փորձով մենք կանգնած ենք որպես վստահության և հուսալիության փարոս իրավական ոլորտում: Մեր ընկերությունը բաղկացած է փորձառու փաստաբանների թիմից, որոնցից յուրաքանչյուրը հագեցած է անզուգական հմտություններով և արդարադատության կիրքով:
     </p>
     <router-link to="/services" class="bg-white text-blue-500 font-semibold py-2 px-6 rounded-full mt-8 inline-block hover:bg-blue-400 hover:text-white">Մեր ծառայությունները</router-link>
   </div>
   <!-- <section class="container mx-auto py-16 px-4">
       <h2 class="text-2xl font-semibold mb-8">Ինչու՞ ընտրել մեզ</h2>
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-
+        
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-4">
             Փորձ, որին կարող եք վստահել
@@ -71,7 +71,7 @@
     <section class="container mx-auto py-16 px-4">
       <h2 class="text-2xl font-semibold mb-8">Ինչու՞ ընտրել մեզ</h2>
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
-
+        
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-4">
             Փորձ, որին կարող եք վստահել
@@ -104,7 +104,7 @@
     <section class="container mx-auto py-5 px-4">
       <h2 class="text-2xl font-semibold mb-8">Մեր նպատակը</h2>
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-
+        
         <div class="bg-white p-6 rounded-lg shadow-md">
           <!-- <h3 class="text-xl font-semibold mb-4">
             Փորձ, որին կարող եք վստահել
@@ -118,7 +118,7 @@
     </section>
 
   </div>
-
+  
 </template>
 
 <script>
@@ -150,7 +150,7 @@ export default {
       this.active = i;
       i++;
     }, 3000);
-
+  
   }
 }
 </script>

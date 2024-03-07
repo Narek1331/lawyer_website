@@ -33,7 +33,7 @@ class AuthController extends Controller
         $data = $request->validated();
         $user = $this->userService->create($data);
         $token = $this->authService->createPersonalAccessToken($user);
-        
+
         return response()->json(['token' => $token], 200);
     }
 

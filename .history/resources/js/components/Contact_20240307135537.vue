@@ -9,16 +9,13 @@
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h2 class="text-xl font-semibold mb-4">Մեր գրասենյակը</h2>
           <p class="mb-2">
-            <a href="geo:latitude,longitude">Հասցե: Քաղաք Արմավիր, Հանրապետության 28</a>
+            <a href="geo:latitude,longitude">Հասցե: Քաղաք Արմավիր, Հանրապետության 28/a>
           </p>
-          <p class="mb-2">Մխիթար Տիգրանյան:
-            <a href="tel:+37498539936">+374-98-53-99-36</a>
-          </p>
-          <p class="mb-2">Սեյրան Մարտիրոսյան:
-            <a href="tel:+37493194025">+374-93-19-40-25</a>
+          <p class="mb-2">Հեռախոսահամար:
+            <a href="tel:+374-77-77-77-70">+374-77-77-77-70</a>
           </p>
           <p class="mb-2">էլեկտրոնային հասցե:
-            <a href="mailto:experienceskill@mail.ru">experienceskill@mail.ru</a>
+            <a href="mailto:recipient@example.com">recipient@example.com</a>
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">

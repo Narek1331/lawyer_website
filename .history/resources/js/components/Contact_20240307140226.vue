@@ -18,7 +18,7 @@
             <a href="tel:+37493194025">+374-93-19-40-25</a>
           </p>
           <p class="mb-2">էլեկտրոնային հասցե:
-            <a href="mailto:experienceskill@mail.ru">experienceskill@mail.ru</a>
+            <a href="mailto:recipient@example.com">recipient@example.com</a>
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">

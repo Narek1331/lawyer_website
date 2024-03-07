@@ -84,12 +84,12 @@ class MessageService
      */
     public function answerMessage(int $id,string $message){
 
-        $this->messageRepository->answerMessage($id, $message);
+        // $this->messageRepository->answerMessage($id, $message);
 
-        $message = $this->messageRepository->find($id);
+        // $message = $this->messageRepository->find($id);
 
-        Mail::to($message['email'])->send(new AnswerMessage($message['message'], $message['answer']['message'],$message['name']));
-
+        // $a = Mail::to($message['email'])->send(new AnswerMessage($message['message'], $message['answer']['message'],$message['name']));
+        dd(11);
         return $message;
 
     }

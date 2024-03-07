@@ -18,8 +18,7 @@ class AuthService
     {
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            $token = $this->createPersonalAccessToken($user);
-            return $token;
+            return $this->createPersonalAccessToken($user);
         }
 
         return false;
@@ -33,7 +32,7 @@ class AuthService
      */
     public function createPersonalAccessToken(User $user)
     {
-        $clientName = env('APP_NAME', 'MyApp');
+        $clientName = env('APP_NAME', 'LawyerApp');
         return $user->createToken($clientName)->accessToken;
     }
 }

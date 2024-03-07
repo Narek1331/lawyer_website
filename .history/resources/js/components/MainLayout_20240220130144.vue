@@ -4,7 +4,7 @@
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
           <div class="text-2xl font-semibold text-gray-100">
-            <router-link to="/" >Փորձ և Հմտություն</router-link>
+            <router-link to="/" >Law</router-link>
           </div>
           <!-- Toggle for smaller screens -->
           <button @click="toggleMenu" class="block lg:hidden text-gray-100 focus:outline-none">
@@ -34,7 +34,7 @@
 
     <footer class="bg-gray-800 text-white py-8 mt-auto">
       <div class="container mx-auto px-4 text-center">
-        <p>&copy; {{ getFullYear() }} Փորձ և Հմտություն Իրավաբանական ընկերություն. Բոլոր իրավունքները պաշտպանված են.</p>
+        <p>&copy; {{ getFullYear() }} Իրավաբանական ընկերություն. Բոլոր իրավունքները պաշտպանված են.</p>
       </div>
     </footer>
   </div>

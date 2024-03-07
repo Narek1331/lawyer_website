@@ -36,7 +36,7 @@ class MessageController extends Controller
     {
         // Retrieve all messages using the MessageService
         $messages = $this->messageService->getAllMessages();
-
+        
         // Return a collection of messages as JSON response
         // return MessageResource::collection($messages);
         return response()->json([
@@ -56,7 +56,7 @@ class MessageController extends Controller
     {
         // Create a new message using the validated request data
         $message = $this->messageService->createMessage($request->validated());
-
+        
         // Return a collection of messages as JSON response with status, message, and data
         return response()->json([
             'status' => true,
@@ -80,7 +80,7 @@ class MessageController extends Controller
         if (!$message) {
             throw new ModelNotFoundException();
         }
-
+        
         return response()->json([
             'status' => true,
             'message' => 'Message finded successfully',
@@ -108,13 +108,13 @@ class MessageController extends Controller
         try {
         // Retrieve a message by ID using the MessageService
         $message = $this->messageService->getMessageById($id);
-
+        
         if (!$message) {
             throw new ModelNotFoundException();
         }
         // Update the message using the validated request data
         $message = $this->messageService->updateMessage($message, $request->validated());
-
+        
         return response()->json([
             'status' => true,
             'message' => 'Message updated successfully',
@@ -140,14 +140,14 @@ class MessageController extends Controller
         try {
         // Retrieve a message by ID using the MessageService
         $message = $this->messageService->getMessageById($id);
-
+        
         if (!$message) {
             throw new ModelNotFoundException();
         }
 
         // Delete the message using the MessageService
         $this->messageService->deleteMessage($message);
-
+        
         return response()->json([
             'status' => true,
             'message' => 'Message destroyed successfully',
@@ -174,7 +174,7 @@ class MessageController extends Controller
         try {
             // Retrieve a message by ID using the MessageService
             $message = $this->messageService->getMessageById($id);
-
+            
             // Check if the message exists
             if (!$message) {
                 // If the message does not exist, throw a ModelNotFoundException
@@ -182,7 +182,7 @@ class MessageController extends Controller
             }
             // Answer the message using the message service
             $message = $this->messageService->answerMessage($id, $request->message);
-
+            
             // Return a JSON response indicating success
             return response()->json([
                 'status' => true,
